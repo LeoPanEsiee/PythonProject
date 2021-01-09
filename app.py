@@ -1,6 +1,7 @@
 # filename 'app.py'
 
 """
+    Authors : linda.luu@edu.esiee.fr, leo.pan@edu.esiee.fr
     Création de l'histogramme.
 
 """
@@ -63,20 +64,19 @@ app.layout = html.Div(children=[
 
 @ app.callback(Output('graph', 'figure'),
                [Input('CountryCode', 'value')])
-# figure depends of value (depends on the chosen country)
+# La figure dépend de value, du pays choisi
 def chose_country(country):
     """
     Retourne la figure en fonction du pays choisi.
 
     Args:
-        country: Chaîne de caractères, pays dans l'UE. Pays par défaut : France.
-
+        country: Chaîne de caractères, pays dans l'UE. 
+        Pays par défaut : France.
     """
     country = country if country else "France"
-    # Countries data subset
-    # df_mois = df.query("jour" == @mois), mois = {2020-03-18 à 2020-04-01}
+    # Sous ensemble du dataframe, sous ensemble en fonction des pays
     dataf_country = dataf.query("CountryCode == @country")
-    # Creating the histogram in two parts
+    # Création de l'histogramme
     fig = px.bar(dataf_country, x="answer", y="percentage",
                  title="Nombre d'agression qu'une personne LGBTQ+ a vécu ces 12 derniers mois",
                  color='answer',
@@ -89,7 +89,6 @@ def chose_country(country):
         modebar_color="#800080",
         bargap=0,
         font_size=10)
-
     return fig
 
 #
@@ -99,16 +98,14 @@ def chose_country(country):
 
 @ app.callback(Output('graph2', 'figure'),
                [Input('CountryCode', 'value')])
-# figure depends of value (depends on the chosen country)
 def compare_countries(country):
     """
-    Permet de créer l'histogramme de comparaison entre pays de l'UE.
+    Permet de créer l'histogramme animé de comparaison entre pays de l'UE.
+    Vue sur chaque pays de l'UE en quelques secondes.
 
     Args:
         country: Chaîne de caractères, pays dans l'UE. Pays par défaut : France.
-
     """
-    # Creating the histogram in two parts
     fig = px.bar(dataf, x="answer", y="percentage",
                  title="Vue de chaque pays",
                  color="CountryCode",
@@ -145,7 +142,6 @@ def compare_answers(country):
         country: Chaîne de caractères, pays dans l'UE. Pays par défaut : France.
 
     """
-    # Creating the histogram in two parts
     fig = px.histogram(dataf, x="answer", y="percentage",
                        title="Comparaison des réponses entre pays de l'UE",
                        color='CountryCode',
