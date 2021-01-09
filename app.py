@@ -56,10 +56,6 @@ app.layout = html.Div(children=[
     dcc.Graph(id="graph3", figure={}, style={'margin-left': 100}),
 ])
 
-# LGBT colors
-colors = {'Once': '#ff0200', 'Twice': '#ffa500', 'Three Times': '#feff00', 'Four Times': '#008001',
-          'Five Times': '#1500ff', 'purple': '#800080', 'More than ten times': '#794f16'}
-
 #
 # Histogramme 1
 #
@@ -85,10 +81,12 @@ def chose_country(country):
                  title="Nombre d'agression qu'une personne LGBTQ+ a vécu ces 12 derniers mois",
                  color='answer',
                  labels={'answer': 'Fréquence', 'percentage': 'Pourcentage'},
+                 color_discrete_sequence=[
+                     "red", "orange", "yellow", "green", "blue", "purple", "brown"],
                  height=500,
                  width=700)
     fig.update_layout(
-        modebar_color=colors['purple'],
+        modebar_color="#800080",
         bargap=0,
         font_size=10)
 
@@ -121,10 +119,11 @@ def compare_countries(country):
                  animation_group="answer",
                  range_x=[-1, 7],
                  range_y=[0, 50],
-                 template="plotly_white"
+                 template="plotly_white",
+                 color_discrete_sequence=px.colors.qualitative.Prism,
                  )
     fig.update_layout(
-        modebar_color=colors['purple'],
+        modebar_color="#800080",
         font_size=10,
         bargap=0
     )
