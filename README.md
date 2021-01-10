@@ -75,6 +75,37 @@ Cet histogramme a pour but de voir l'ensemble des taux en fonction du pays de l'
 
 #### Histogramme 3
 
+Cet histogramme a pour but de voir la globalité des réponses de chaque pays. Il peut être exploité de plusieurs manières. Par exemple, on peut chercher le taux le plus élevé en cherchant la barre la plus haute, et vice versa. De plus, nous pouvons l'utiliser pour comparer plusieurs pays ciblés, ce qui est utile quand on a un nombre de pays à comparer qui peut varier.
+
+##### Sélectionner un ou plusieurs pays
+
+Pour pouvoir sélectionner un ou plusieurs pays, il faut :
+
+- Double-cliquer sur le pays en question, dans la barre `CountryCode` à droite du graphe,
+- Après cette première sélection, on peut ajouter un pays, pour cela :
+  - Cliquer une fois sur le deuxième pays choisi
+  - Réitérer l'étape pour pouvoir en sélectionner un troisième, et ainsi de suite.
+
+##### Désélectionner un pays
+
+Pour pouvoir retirer un pays de la sélection totale, procéder ainsi :
+
+- Cliquer une fois sur le pays à retirer, dans la barre `CountryCode`, à droite du graphe,
+- Réitérer l'étape pour pouvoir en retirer d'autres.
+
+##### Zoomer sur les catégories
+
+Pour pouvoir zoomer sur les catégories de réponses des pays, procéder ainsi :
+
+- Passer la souris en haut à droite du graphe pour afficher le `modebar`,
+- Une fois le modebar violet apparu, cliquer sur `Box Select` (logo carré en pointillé),
+- Sélectionner les catégories :
+  - Cliquer enfoncé en prenant la zone des catégories voulues
+  - Relaché le clic lorsque la zone a été choisie.
+- Réitérer toutes les étapes ci-dessus pour zoomer davantage
+
+> Notes : Pour revenir sur le mode d'origine, cliquer sur _Autoscale_ du modebar (logo flèches croisées en diagonale).
+
 ---
 
 # Developper Guide
@@ -88,7 +119,7 @@ Ce guide du développeur est conçu pour fournir de la documentation aux personn
 
 Partie de Léo
 
-## 2 - Apporter sa touche de programmation aux histogrammes interactifs
+## 2 - Améliorer les histogrammes
 
 - on effectue la division entière de `p` par `d`
 
