@@ -5,7 +5,7 @@
 1. [Rapport d'analyse](#rapport-d'analyse)
 2. [User Guide](#user-guide)
 3. [Developper Guide](#developper-guide)
-4. [Problèmes rencontrés](#problemes-rencontres)
+4. [Problèmes rencontrés](#problèmes-rencontrés)
 
 Trouvez toutes les données et sondages via ce lien :
 
@@ -47,7 +47,19 @@ Partie de Léo
 
 ## 2 - Fréquence d'agression visant une personne LGBTQ+
 
+En France, selon le premier histogramme, il y a un peu plus d'une chance sur deux qu'une personne LGBTQ+ se fasse agressée physiquement ou verbalement contre 3 à 4 % pour une fréquence allant de 4 à plus de dix fois. Les taux d'harcèlement quotidien est donc très bas comparé à une agression éventuelle.
+
+&nbsp;
+En exploitant le deuxième et le dernier histogramme, on peut voir que les pays où le taux d'harcèlement est le plus élevé sont la Roumanie, la Lituanie et le Luxembourg. En effet, le pourcentage des fréquences s'équilibrent pour chacun des pays et les pourcentages des nombres d'agressions allant de 5 à plus de dix fois sont 2, voire 3 fois plus élevé que la plupart des pays.
+![Image equilibre](equilibre_lituanierom.png)
+Nous avons un taux de 14% pour les agressions au Luxembourg de plus de dix fois (et 10%, 11% pour la Roumanie et la Lituanie), alors que la moyenne affiche un taux de 6% pour cette même catégorie (cf. _Average_). Ce qui prouve un taux d'harcèlement plus élevé pour ces trois pays.
+
 ### Conclusion
+
+Ce dashboard nous a permis de découvrir les pays les plus touchés par les agressions visant la communauté LGBTQ+ ainsi que le nombre de fois où ces personnes ont été agressé dans les pays de l'UE. En effet, les pays les plus touchés sont : , , , ; où on peut apercevoir un pourcentage de %, pour le pays , ou encore un pourcentage de % pour le pays, avec un taux de % d'au moins une agression pour ce même pays.
+
+&nbsp;
+En parcourant ces données et en les analysant, on peut alors se demander si ces données reflètent de la qualité de vie des personnes LGBTQ+ dans ces pays, ou au minima, si elles sont un facteur qui reflèterait de la qualité de vie de la communauté. De plus, il serait intéressant d'établir une corrélation entre la qualité de vie d'une personne LGBTQ+ et les droits qu'elles possèdent dans son pays.
 
 ---
 
