@@ -1,4 +1,4 @@
-#coding=utf-8
+# -*- coding: utf-8 -*-
 import json
 import pandas as pd
 import plotly.express as px
@@ -16,7 +16,7 @@ for feature in europe['features']:
     i = i+1
 
 #Loading csv
-df = pd.read_csv("Attacked.csv", delim_whitespace=True, header=13)
+df = pd.read_csv("Attacked.csv", delim_whitespace=True, header=13, encoding='latin1')
 
 #Removing anwsers
 df = df[df.answer != 'No']
