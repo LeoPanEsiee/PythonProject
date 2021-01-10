@@ -1,10 +1,11 @@
-# Python Dashboard
+# Python Dashboard : RAINBOW
 
 ## Sommaire
 
 1. [Rapport d'analyse](#rapport-d'analyse)
 2. [User Guide](#user-guide)
 3. [Developper Guide](#developper-guide)
+4. [Problèmes rencontrés](#problemes-rencontres)
 
 Trouvez toutes les données et sondages via ce lien :
 
@@ -30,6 +31,8 @@ et des résultats du sondage des personnes LGBTQ+. Deuxièmement, nous verrons l
 
 ## 1 - Les pays de l'UE les plus touchés
 
+Partie de Léo
+
 - on effectue la division entière de `p` par `d`
 
   $ python ex03.py
@@ -42,8 +45,6 @@ et des résultats du sondage des personnes LGBTQ+. Deuxièmement, nous verrons l
   - SI le reste est nul, ALORS le nombre n’est pas premier et on interrompt le parcours de la boucle en affichant False
 - FIN POUR
 
-> Note : ce problème peut être résolu à "bas niveau" en itérant sur les caractères ou à plus "haut niveau" en utilisant les méthodes spécifiques aux chaines de caractères. La deuxième approche, plus _pythonique_ est à privilégier.
-
 ## 2 - Fréquence d'agression visant une personne LGBTQ+
 
 ### Conclusion
@@ -52,7 +53,14 @@ et des résultats du sondage des personnes LGBTQ+. Deuxièmement, nous verrons l
 
 # User Guide
 
+Bienvenue dans le guide de l'utilisateur de **Rainbow** !
+
+&nbsp;
+Ce guide de l'utilisateur est conçu pour fournir de la documentation aux personnes qui utiliseront le dashboard **Rainbow**, il est donc conçu pour être lu par tout utilisateur du dashboard.
+
 ## 1 - Explorer la carte interactive
+
+Partie de Léo
 
 "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
 
@@ -64,10 +72,23 @@ et des résultats du sondage des personnes LGBTQ+. Deuxièmement, nous verrons l
 
 # Developper Guide
 
+Bienvenue dans le guide du développeur de **Rainbow** !
+
+&nbsp;
+Ce guide du développeur est conçu pour fournir de la documentation aux personnes qui souhaiteront développer et approfondir les fonctionnalités du dashboard **Rainbow**, il est donc conçu pour être lu par tout développeur du dashboard.
+
 ## 1 - Programmer et améliorer la carte interactive
+
+Partie de Léo
 
 `"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad `
 
 ## 2 - Apporter sa touche de programmation aux histogrammes interactifs
 
 `"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad `
+
+---
+
+# Problèmes rencontrés
+
+Cette partie traite des problèmes rencontrés notamment lors de la programmation du dashboard mais elle n'exclut pas l'éventualité de problèmes différents rencontrés.
