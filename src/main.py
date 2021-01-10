@@ -1,4 +1,4 @@
-# filename 'app.py'
+# filename 'main.py'
 
 """
     Authors : linda.luu@edu.esiee.fr, leo.pan@edu.esiee.fr
@@ -37,6 +37,7 @@ col_options = [
 
 #Création d'une instance de dash
 app = dash.Dash(__name__)
+app.title = "Endangered Rainbow"
 
 #
 # Histogramme 1
@@ -76,19 +77,24 @@ def compare_countries():
     """
     Figure représentant un histogramme animé comparant les réponses des pays de l'UE.
     """
-    fig = px.bar(dataf, x="answer", y="percentage",
-                 title="Animation des réponses de chaque pays",
-                 color="CountryCode",
-                 labels={'answer': 'Fréquence', 'percentage': 'Pourcentage'},
-                 height=500,
-                 width=700,
-                 animation_frame="CountryCode",
-                 animation_group="answer",
-                 range_x=[-1, 7],
-                 range_y=[0, 50],
-                 template="plotly_white",
-                 color_discrete_sequence=px.colors.qualitative.Prism,
-                 )
+    fig = px.bar(
+        dataf, x="answer", y="percentage",
+        title="Animation des réponses de chaque pays",
+        color="CountryCode",
+        labels={
+            'answer': 'Fréquence',
+            'percentage': 'Pourcentage',
+            'CountryCode':'Pays'
+        },
+        height=500,
+        width=700,
+        animation_frame="CountryCode",
+        animation_group="answer",
+        range_x=[-1, 7],
+        range_y=[0, 50],
+        template="plotly_white",
+        color_discrete_sequence=px.colors.qualitative.Prism,
+    )
     fig.update_layout(
         modebar_color="#800080",
         font_size=10,
@@ -103,15 +109,20 @@ def compare_answers():
     """
     Figure représentant les réponses des pays de l'UE regroupé par réponse.
     """
-    fig = px.histogram(dataf, x="answer", y="percentage",
-                       title="Comparaison des réponses entre pays de l'UE",
-                       color='CountryCode',
-                       labels={'answer': 'Fréquence',
-                               'percentage': 'Pourcentage'},
-                       height=600,
-                       width=1200,
-                       hover_name="CountryCode",
-                       barmode="group")
+    fig = px.histogram(
+        dataf, x="answer", y="percentage",
+        title="Comparaison des réponses entre pays de l'UE",
+        color='CountryCode',
+        labels={
+            'answer': 'Fréquence',
+            'percentage': 'Percentage',
+            'CountryCode':'Pays'
+        },
+        height=600,
+        width=1500,
+        hover_name="CountryCode",
+        barmode="group"
+    )
     return fig
 
 
@@ -153,14 +164,19 @@ df['id'] = df['CountryCode'].apply(lambda x : country_id_map[x])
 def interactive_map():
     """
     Figure représentant la carte des réponses positives à la question :
-    "Avez vous été physiquement ou sexuellement attacké ou menacé dans ces 5 dernieres années ?"
+    "Avez vous été physiquement ou sexuellement attacké ou menacé dans ces 5 dernieres années ?
+    (Pour res raison LGBTQ+)"
     """
     fig = px.choropleth_mapbox(df,
         title = "A été physiquement ou sexuellement attacké ou menacé dans ces 5 dernieres années",
         locations='id', geojson=europe_countries, color='percentage',
         color_continuous_scale=px.colors.sequential.Blues,
         hover_name='CountryCode',
-        hover_data=['percentage'],
+        hover_data={'percentage':True,'id':False},
+        labels={
+            "percentage": "pourcentage de oui"
+        },
+        
         mapbox_style="carto-positron",
         center={'lat' : 56.7, 'lon' : 10},
         zoom = 2.8,
@@ -187,9 +203,9 @@ app.layout = html.Div(
         dcc.Dropdown(
             id="chosen-graph-dropdown", value=1,
             options= [
-                {'label':'Countries', 'value':1},
-                {'label':'Answers', 'value':2},
-                {'label':'Map', 'value':3}
+                {'label':'Nombre d\'agressions', 'value':1},
+                {'label':'Comparaison des réponses', 'value':2},
+                {'label':'Carte de pourcentage de personnes agressés par pays', 'value':3}
             ],
             style={
                 'textAlign': 'center', 'color': 'black',
@@ -251,4 +267,4 @@ def countryCode_dropdown_style():
 
 
 #Lancer l'application
-app.run_server(debug=True)
+app.run_server(debug=True, port="8888")

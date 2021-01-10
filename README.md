@@ -107,13 +107,9 @@ Use a production WSGI server instead.
 
 Le résultat s’observe dans la fenêtre d’un navigateur à l’adresse indiquée : `http://127.0.0.1:8888`.
 
-## 3 - Explorer la carte interactive
+## 3 - Découvrir les histogrammes interactifs
 
-Partie de Léo
-
-## 4 - Découvrir les histogrammes interactifs
-
-Le dashboard contient au total 3 histogrammes. Chaque histogramme a sa propre utilisation et fonctionnalités mais ces histogrammes ont quelques fonctionnalités communes. Pour accéder aux histogrammes, il faut choisir dans le menu déroulant `"Countries"`ou `"Answers"`.
+Le dashboard contient au total 3 histogrammes. Chaque histogramme a sa propre utilisation et fonctionnalités mais ces histogrammes ont quelques fonctionnalités communes. Pour accéder aux histogrammes, il faut choisir dans le menu déroulant `"Nombre d'agressions"`ou `"Comparaison des réponses"`.
 
 #### Histogramme 1
 
@@ -156,6 +152,20 @@ Pour pouvoir zoomer sur les catégories de réponses des pays, procéder ainsi :
 
 > Notes : Pour revenir sur le mode d'origine, cliquer sur _Autoscale_ du modebar (logo flèches croisées en diagonale).
 
+
+## 4 - Explorer la carte interactive
+
+Afin de mieux représenter des réponses, nous avons ajouter au dashboard une carte intéractive.
+Celle-ci est accessible dans le menu déroulant principal en sélectionnant `"Carte de pourcentage de personnes agressés par pays"`.
+
+La carte affiche le pourcentage des populations des pays européens ayant répondu "oui" à la question suivante :
+`"Avez vous été physiquement ou sexuellement attacké ou menacé dans ces 5 dernieres années ?(Pour res raison LGBTQ+)"`
+
+Les pays les plus foncés sont ceux ayant répondu le plus souvent "oui". Il est également possible de survoler les pays afin d'avoir le nom du pays ainsi que son pourcentage exact.
+
+Cette carte est manipulable. Il est possible de zoomer et dézoomer avec la molette de la souris et l'on peut également déplacer le champs de vision du monde avec le clic gauche.
+
+
 ---
 
 # Developer Guide
@@ -166,6 +176,16 @@ Ce guide du développeur est conçu pour fournir de la documentation aux personn
 
 ## 1 - Programmer et améliorer la carte interactive
 
-Partie de Léo
+La carte se base sur les technologies de choropleth_mapbox de plotly express.
+
+Pour fonctionner, il faut associer les données que l'on récupère d'un geojson européen; avec les réponses des pays touchés dans le sondage récupéré sous forme de csv. 
+
+Il faut en outre prendre en compte les noms donnés à ces pays. Pour cette raison, si un pays du sondage n'est pas présent dans les données du geojson, son cas doit être géré. 
+
+Cela concerne en particulier des lignes qui pourraient apparaitrent dans certaines version de ce sondage (pas présent ici), en particulier pour les chiffres sur la Serbie (pas dans l'UE) et EU-28 qui englobe la moyenne des 28 pays de l'UE. Il y a également le cas particulier de la république Tchèque qui est nommée 'Czechia' dans le csv mais 'Czech Rep.' dans le geojson. 
+
+Ainsi, par mesure de sécurité, de simplicité et de gestion d'exceptions, les pays invalides ne sont pas représentés sur la carte.
+
+La carte affiche ensuite les chiffres contenus dans le csv sur les locations des pays concernés. Ici, on affiche le pourcentage des populations ayant répondu "oui" de chaque pays.
 
 ## 2 - Améliorer les histogrammes
