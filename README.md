@@ -48,11 +48,13 @@ Partie de Léo
 ## 2 - Fréquence d'agression visant une personne LGBTQ+
 
 En France, selon le premier histogramme, il y a un peu plus d'une chance sur deux qu'une personne LGBTQ+ se fasse agressée physiquement ou verbalement contre 3 à 4 % pour une fréquence allant de 4 à plus de dix fois. Les taux d'harcèlement quotidien est donc très bas comparé à une agression éventuelle.
-
-&nbsp;
+![Image histogramme france](france.png)
 En exploitant le deuxième et le dernier histogramme, on peut voir que les pays où le taux d'harcèlement est le plus élevé sont la Roumanie, la Lituanie et le Luxembourg. En effet, le pourcentage des fréquences s'équilibrent pour chacun des pays et les pourcentages des nombres d'agressions allant de 5 à plus de dix fois sont 2, voire 3 fois plus élevé que la plupart des pays.
 ![Image equilibre](equilibre_lituanierom.png)
-Nous avons un taux de 14% pour les agressions au Luxembourg de plus de dix fois (et 10%, 11% pour la Roumanie et la Lituanie), alors que la moyenne affiche un taux de 6% pour cette même catégorie (cf. _Average_). Ce qui prouve un taux d'harcèlement plus élevé pour ces trois pays.
+Nous avons un taux de 14% pour les agressions au Luxembourg de plus de dix fois (et 10%, 11% pour la Roumanie et la Lituanie), alors que la moyenne affiche un taux de 6% pour cette même catégorie (cf. _Average_). Ce qui prouve un taux d'harcèlement plus élevé pour ces trois pays. Sur l'image ci dessous, en rose, la moyenne de l'ensemble de l'UE concernant les agressions.
+![Image comparaison avec moyenne](harlecementelevecompare.png)
+Voici en détail le taux moyen des agressions :
+![Image moyenne](average.png)
 
 ### Conclusion
 
