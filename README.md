@@ -5,7 +5,6 @@
 1. [Rapport d'analyse](#rapport-d'analyse)
 2. [User Guide](#user-guide)
 3. [Developper Guide](#developper-guide)
-4. [Problèmes rencontrés](#problèmes-rencontrés)
 
 Trouvez toutes les données et sondages via ce lien :
 
@@ -32,18 +31,6 @@ et des résultats du sondage des personnes LGBTQ+. Deuxièmement, nous verrons l
 ## 1 - Les pays de l'UE les plus touchés
 
 Partie de Léo
-
-- on effectue la division entière de `p` par `d`
-
-  $ python ex03.py
-  731 = 17 x 43 : False
-  $ python ex03.py
-  733 : True
-
-- POUR chaque diviseur `d` parmi les valeurs `2` et les valeurs impaires inférieures à $`\sqrt{p}`$ (vérifier que ça suffit sur un exemple)
-  - on effectue la division entière de `p` par `d`
-  - SI le reste est nul, ALORS le nombre n’est pas premier et on interrompt le parcours de la boucle en affichant False
-- FIN POUR
 
 ## 2 - Fréquence d'agression visant une personne LGBTQ+
 
@@ -74,11 +61,19 @@ Ce guide de l'utilisateur est conçu pour fournir de la documentation aux person
 
 Partie de Léo
 
-"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-
 ## 2 - Découvrir les histogrammes interactifs
 
-"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
+Le dashboard contient au total 3 histogrammes. Chaque histogramme a sa propre utilisation et fonctionnalités mais ces histogrammes ont quelques fonctionnalités communes.
+
+#### Histogramme 1
+
+Cet histogramme a pour but de montrer en détail, le taux d'agression selon un pays choisi. Le choix du pays se fait à l'aide de la sélection en cliquant sur le menu déroulant (dropdown). Le pays par défaut est la France. En cliquant sur un pays, un histogramme s'affiche. En passant la souris sur une des réponses _'Once'_, _'Twice'_, etc., on a le détail du pourcentage d'agression sur cette réponse.
+
+#### Histogramme 2
+
+Cet histogramme a pour but de voir l'ensemble des taux en fonction du pays de l'UE, et cela, en quelques secondes. L'animation permet un aperçu rapide des réponses. Cet histogramme n'a pas pour but d'entrer dans les détails. Pour cela, il faut se référer à l'histogramme 1. Le bouton Play est situé en bas à gauche du graphe, et permet de jouer l'animation. Le bouton Pause peut être activé pendant l'animation et permet d'arrêter l'animation afin de voir les réponses d'un pays. Ce bouton est situé à droite du bouton Play.
+
+#### Histogramme 3
 
 ---
 
@@ -93,14 +88,16 @@ Ce guide du développeur est conçu pour fournir de la documentation aux personn
 
 Partie de Léo
 
-`"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad `
-
 ## 2 - Apporter sa touche de programmation aux histogrammes interactifs
 
-`"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad `
+- on effectue la division entière de `p` par `d`
 
----
+  $ python ex03.py
+  731 = 17 x 43 : False
+  $ python ex03.py
+  733 : True
 
-# Problèmes rencontrés
-
-Cette partie traite des problèmes rencontrés notamment lors de la programmation du dashboard mais elle n'exclut pas l'éventualité de problèmes différents rencontrés.
+- POUR chaque diviseur `d` parmi les valeurs `2` et les valeurs impaires inférieures à $`\sqrt{p}`$ (vérifier que ça suffit sur un exemple)
+  - on effectue la division entière de `p` par `d`
+  - SI le reste est nul, ALORS le nombre n’est pas premier et on interrompt le parcours de la boucle en affichant False
+- FIN POUR
