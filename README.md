@@ -4,7 +4,7 @@
 
 1. [Rapport d'analyse](#rapport-d'analyse)
 2. [User Guide](#user-guide)
-3. [Developper Guide](#developper-guide)
+3. [Developer Guide](#developer-guide)
 
 Trouvez toutes les données et sondages via ce lien :
 
@@ -163,7 +163,7 @@ Pour pouvoir zoomer sur les catégories de réponses des pays, procéder ainsi :
 
 ---
 
-# Developper Guide
+# Developer Guide
 
 Bienvenue dans le guide du développeur de **Endangered Rainbow** !
 
