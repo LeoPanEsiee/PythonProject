@@ -1,4 +1,4 @@
-# Python Dashboard : RAINBOW
+# Python Dashboard : ENDANGERED RAINBOW
 
 ## Sommaire
 
@@ -48,7 +48,7 @@ Partie de Léo
 ## 2 - Fréquence d'agression visant une personne LGBTQ+
 
 En France, selon le premier histogramme, il y a un peu plus d'une chance sur deux qu'une personne LGBTQ+ se fasse agressée physiquement ou verbalement contre 3 à 4 % pour une fréquence allant de 4 à plus de dix fois. Les taux d'harcèlement quotidien est donc très bas comparé à une agression éventuelle.
-![Image histogramme france](france.png)
+![Image histogramme france](france-2.png)
 En exploitant le deuxième et le dernier histogramme, on peut voir que les pays où le taux d'harcèlement est le plus élevé sont la Roumanie, la Lituanie et le Luxembourg. En effet, le pourcentage des fréquences s'équilibrent pour chacun des pays et les pourcentages des nombres d'agressions allant de 5 à plus de dix fois sont 2, voire 3 fois plus élevé que la plupart des pays.
 ![Image equilibre](equilibre_lituanierom.png)
 Nous avons un taux de 14% pour les agressions au Luxembourg de plus de dix fois (et 10%, 11% pour la Roumanie et la Lituanie), alors que la moyenne affiche un taux de 6% pour cette même catégorie (cf. _Average_). Ce qui prouve un taux d'harcèlement plus élevé pour ces trois pays. Sur l'image ci dessous, en rose, la moyenne de l'ensemble de l'UE concernant les agressions.
@@ -67,10 +67,10 @@ En parcourant ces données et en les analysant, on peut alors se demander si ces
 
 # User Guide
 
-Bienvenue dans le guide de l'utilisateur de **Rainbow** !
+Bienvenue dans le guide de l'utilisateur de **Endangered Rainbow** !
 
 &nbsp;
-Ce guide de l'utilisateur est conçu pour fournir de la documentation aux personnes qui utiliseront le dashboard **Rainbow**, il est donc conçu pour être lu par tout utilisateur du dashboard.
+Ce guide de l'utilisateur est conçu pour fournir de la documentation aux personnes qui utiliseront le dashboard **Endangered Rainbow**, il est donc conçu pour être lu par tout utilisateur du dashboard.
 
 ## 1 - Explorer la carte interactive
 
@@ -86,10 +86,10 @@ Partie de Léo
 
 # Developper Guide
 
-Bienvenue dans le guide du développeur de **Rainbow** !
+Bienvenue dans le guide du développeur de **Endangered Rainbow** !
 
 &nbsp;
-Ce guide du développeur est conçu pour fournir de la documentation aux personnes qui souhaiteront développer et approfondir les fonctionnalités du dashboard **Rainbow**, il est donc conçu pour être lu par tout développeur du dashboard.
+Ce guide du développeur est conçu pour fournir de la documentation aux personnes qui souhaiteront développer et approfondir les fonctionnalités du dashboard **Endangered Rainbow**, il est donc conçu pour être lu par tout développeur du dashboard.
 
 ## 1 - Programmer et améliorer la carte interactive
 
