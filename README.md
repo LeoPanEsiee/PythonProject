@@ -6,11 +6,11 @@
 2. [User Guide](#user-guide)
 3. [Developper Guide](#developper-guide)
 
-Trouvez toutes les données et sondage via ce lien :
+Trouvez toutes les données et sondages via ce lien :
 
 [Open Data : FRA EU LGBT](https://fra.europa.eu/en/publications-and-resources/data-and-maps/survey-fundamental-rights-lesbian-gay-bisexual-and)
 
-> Notes : Les deux sondages utilisés sont **"How many times did somebody physically/sexually attack or threaten you in the last 12 months ?"** et **Physically/sexually attacked or threatened with violence at home or elsewhere in the last 5 years for any reason"**; disponibles via le Topic "Violence and harassment (47)".
+> Notes : Les deux sondages utilisés sont _"How many times did somebody physically/sexually attack or threaten you in the last 12 months ?"_ et _"Physically/sexually attacked or threatened with violence at home or elsewhere in the last 5 years for any reason"_ ; disponibles via le Topic _"Violence and harassment (47)"_.
 
 ---
 
@@ -29,9 +29,6 @@ Premièrement, nous analyserons les pays les plus touchées par des agressions g
 et des résultats du sondage des personnes LGBTQ+. Deuxièmement, nous verrons le nombre de fois où une personne LGBTQ+ a été menacé, ou agressé physiquement/sexuellement au cours de ces 12 derniers mois, dans l'UE.
 
 ## 1 - Les pays de l'UE les plus touchés
-
-L'exercice d'application ci dessous correspond au chapitre [Les dictionnaires](https://perso.esiee.fr/~courivad/Python/10-dict.html).
-Pour cet exercice, vous devez utiliser en priorité le squelette contenu dans le fichier `ex10.py`.
 
 - on effectue la division entière de `p` par `d`
 
@@ -55,7 +52,11 @@ Pour cet exercice, vous devez utiliser en priorité le squelette contenu dans le
 
 # User Guide
 
-## 1 - Premier titre
+## 1 - Explorer la carte interactive
+
+"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
+
+## 2 - Découvrir les histogrammes interactifs
 
 "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
 
@@ -63,6 +64,10 @@ Pour cet exercice, vous devez utiliser en priorité le squelette contenu dans le
 
 # Developper Guide
 
-## 1 - The first
+## 1 - Programmer et améliorer la carte interactive
+
+`"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad `
+
+## 2 - Apporter sa touche de programmation aux histogrammes interactifs
 
 `"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad `
