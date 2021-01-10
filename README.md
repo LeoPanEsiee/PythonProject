@@ -43,7 +43,6 @@ Enfin, nous avons un taux de 14% pour les agressions au Luxembourg de plus de di
 
 Ce dashboard nous a permis de découvrir les pays les plus touchés par les agressions visant la communauté LGBTQ+ ainsi que le nombre de fois où ces personnes ont été agressé dans les pays de l'UE. En effet, les pays les plus touchés sont : , , , ; où on peut apercevoir un pourcentage de %, pour le pays , ou encore un pourcentage de % pour le pays, avec un taux de % d'au moins une agression pour ce même pays.
 
-&nbsp;
 En parcourant ces données et en les analysant, on peut alors se demander si ces données reflètent de la qualité de vie des personnes LGBTQ+ dans ces pays, ou au minima, si elles sont un facteur qui reflèterait de la qualité de vie de la communauté. De plus, il serait intéressant d'établir une corrélation entre la qualité de vie d'une personne LGBTQ+ et les droits qu'elles possèdent dans son pays.
 
 ---
@@ -52,7 +51,6 @@ En parcourant ces données et en les analysant, on peut alors se demander si ces
 
 Bienvenue dans le guide de l'utilisateur de **Endangered Rainbow** !
 
-&nbsp;
 Ce guide de l'utilisateur est conçu pour fournir de la documentation aux personnes qui utiliseront le dashboard **Endangered Rainbow**, il est donc conçu pour être lu par tout utilisateur du dashboard.
 
 ## 1 - Installation
@@ -64,10 +62,9 @@ Plusieurs installations sont nécessaires afin de procéder à l'affichage du da
 L'installation du projet se fait à l'aide des commandes suivantes :
 
 ```
-$ git clone https://example.com
+$ git clone https://github.com/LeoPanEsiee/PythonProject.git
 $ cd ../path/to/the/file
-$ npm install
-$ npm start
+
 ```
 
 ### Installation des packages nécessaires
@@ -84,7 +81,7 @@ plotly.express
 
 ## 2 - Lancer le dashboard
 
-**URL du dashboard : [Cliquer ici pour accéder au dashboard](http://127.0.0.1:8050)**
+**URL du dashboard : [Cliquer ici pour accéder au dashboard](http://127.0.0.1:8888)**
 
 ### Exécution du code
 
@@ -96,7 +93,7 @@ Cette application est lancée dans une console :
 
 ```
 $ python main.py
-Dash is running on http://127.0.0.1:8050/
+Dash is running on http://127.0.0.1:8888/
 
 Warning: This is a development server. Do not use app.run_server
 in production, use a production WSGI server like gunicorn instead.
@@ -108,7 +105,7 @@ Use a production WSGI server instead.
 * Debug mode: on
 ```
 
-Le résultat s’observe dans la fenêtre d’un navigateur à l’adresse indiquée : `http://127.0.0.1:8050`.
+Le résultat s’observe dans la fenêtre d’un navigateur à l’adresse indiquée : `http://127.0.0.1:8888`.
 
 ## 3 - Explorer la carte interactive
 
@@ -116,7 +113,7 @@ Partie de Léo
 
 ## 4 - Découvrir les histogrammes interactifs
 
-Le dashboard contient au total 3 histogrammes. Chaque histogramme a sa propre utilisation et fonctionnalités mais ces histogrammes ont quelques fonctionnalités communes.
+Le dashboard contient au total 3 histogrammes. Chaque histogramme a sa propre utilisation et fonctionnalités mais ces histogrammes ont quelques fonctionnalités communes. Pour accéder aux histogrammes, il faut choisir dans le menu déroulant `"Countries"`ou `"Answers"`.
 
 #### Histogramme 1
 
@@ -165,7 +162,6 @@ Pour pouvoir zoomer sur les catégories de réponses des pays, procéder ainsi :
 
 Bienvenue dans le guide du développeur de **Endangered Rainbow** !
 
-&nbsp;
 Ce guide du développeur est conçu pour fournir de la documentation aux personnes qui souhaiteront développer et approfondir les fonctionnalités du dashboard **Endangered Rainbow**, il est donc conçu pour être lu par tout développeur du dashboard.
 
 ## 1 - Programmer et améliorer la carte interactive
@@ -173,15 +169,3 @@ Ce guide du développeur est conçu pour fournir de la documentation aux personn
 Partie de Léo
 
 ## 2 - Améliorer les histogrammes
-
-- on effectue la division entière de `p` par `d`
-
-  $ python ex03.py
-  731 = 17 x 43 : False
-  $ python ex03.py
-  733 : True
-
-- POUR chaque diviseur `d` parmi les valeurs `2` et les valeurs impaires inférieures à $`\sqrt{p}`$ (vérifier que ça suffit sur un exemple)
-  - on effectue la division entière de `p` par `d`
-  - SI le reste est nul, ALORS le nombre n’est pas premier et on interrompt le parcours de la boucle en affichant False
-- FIN POUR
