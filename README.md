@@ -8,7 +8,9 @@
 
 Trouvez toutes les données et sondage via ce lien :
 
-[FRA EU LGBT](https://fra.europa.eu/en/publications-and-resources/data-and-maps/survey-fundamental-rights-lesbian-gay-bisexual-and)
+[Open Data : FRA EU LGBT](https://fra.europa.eu/en/publications-and-resources/data-and-maps/survey-fundamental-rights-lesbian-gay-bisexual-and)
+
+> Notes : Les deux sondages utilisés sont **"How many times did somebody physically/sexually attack or threaten you in the last 12 months ?"** et **Physically/sexually attacked or threatened with violence at home or elsewhere in the last 5 years for any reason"**; disponibles via le Topic "Violence and harassment (47)".
 
 ---
 
