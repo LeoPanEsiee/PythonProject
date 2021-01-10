@@ -1,4 +1,5 @@
 # filename 'app.py'
+#coding=utf-8
 
 """
     Création de l'histogramme.
@@ -63,7 +64,6 @@ colors = {'Once': '#ff0200', 'Twice': '#ffa500', 'Three Times': '#feff00', 'Four
 #
 # Histogramme 1
 #
-
 
 @ app.callback(Output('graph', 'figure'),
                [Input('CountryCode', 'value')])
