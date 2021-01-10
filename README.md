@@ -36,9 +36,9 @@ Partie de Léo
 
 En France, selon le premier histogramme, il y a un peu plus d'une chance sur deux qu'une personne LGBTQ+ se fasse agressée physiquement ou verbalement contre 3 à 4 % pour une fréquence allant de 4 à plus de dix fois. Les taux d'harcèlement quotidien est donc très bas comparé à une agression éventuelle.
 ![Image histogramme france](images/nombre_agressions_france.png)
-En exploitant le deuxième et le dernier histogramme, on peut voir que les pays où le taux d'harcèlement est le plus élevé sont la Roumanie, la Lituanie et le Luxembourg. En effet, le pourcentage des fréquences s'équilibrent pour chacun des pays et les pourcentages des nombres d'agressions allant de 5 à plus de dix fois sont 2, voire 3 fois plus élevé que la plupart des pays.
+En exploitant le deuxième et le dernier histogramme, on peut voir que les pays où le taux d'harcèlement est le plus élevé sont la Roumanie, la Lituanie et le Luxembourg. En effet, le pourcentage des fréquences s'équilibrent pour chacun des pays et les pourcentages des nombres d'agressions allant de 5 à plus de dix fois sont 2, voire 3 fois plus élevé que la plupart des pays. Au contraire, si nous prenons seulement la réponse 'Once', donc une seule agression en 12 mois, on peut se dire que les taux sont très faibles (35% pour la Roumanie et 33% pour la Lituanie), comparés à la moyenne qui est de 45%. Or, cela montre que les fréquences d'agressions sont hautes.
 ![Image equilibre](images/equilibre_lituania_romania.png)
-Nous avons un taux de 14% pour les agressions au Luxembourg de plus de dix fois (et 10%, 11% pour la Roumanie et la Lituanie), alors que la moyenne affiche un taux de 6% pour cette même catégorie (cf. _Average_). Ce qui prouve un taux d'harcèlement plus élevé pour ces trois pays. Sur l'image ci dessous, en rose, la moyenne de l'ensemble de l'UE concernant les agressions.
+Enfin, nous avons un taux de 14% pour les agressions au Luxembourg de plus de dix fois (et 10%, 11% pour la Roumanie et la Lituanie), alors que la moyenne affiche un taux de 6% pour cette même catégorie (cf. _Average_). Ce qui prouve un taux d'harcèlement plus élevé pour ces trois pays. Sur l'image ci dessous, en rose, la moyenne de l'ensemble de l'UE concernant les agressions.
 ![Image comparaison avec moyenne](images/desequilibre.png)
 
 ### Conclusion
@@ -57,11 +57,66 @@ Bienvenue dans le guide de l'utilisateur de **Endangered Rainbow** !
 &nbsp;
 Ce guide de l'utilisateur est conçu pour fournir de la documentation aux personnes qui utiliseront le dashboard **Endangered Rainbow**, il est donc conçu pour être lu par tout utilisateur du dashboard.
 
-## 1 - Explorer la carte interactive
+## 1 - Installation
+
+Plusieurs installations sont nécessaires afin de procéder à l'affichage du dashboard.
+
+### Installation du projet
+
+L'installation du projet se fait à l'aide des commandes suivantes :
+
+```
+$ git clone https://example.com
+$ cd ../path/to/the/file
+$ npm install
+$ npm start
+```
+
+### Installation des packages nécessaires
+
+```
+dash
+pandas
+plotly.express
+```
+
+1. Installer dash : `pip install dash`
+2. Installer pandas : `pip install pandas`
+3. Installer plotly : `pip install plotly` sauf si déjà installé, dans ce cas utiliser cette commande : `pip install plotly --upgrade`
+
+## 2 - Lancer le dashboard
+
+**URL du dashboard : [Cliquer ici pour accéder au dashboard](http://127.0.0.1:8050)**
+
+### Exécution du code
+
+L'exécution du code pour lancer le dashboard se fait de cette manière :
+
+`python main.py` pour Windows ou `python3 main.py` pour Linux
+
+Cette application est lancée dans une console :
+
+```
+$ python main.py
+Dash is running on http://127.0.0.1:8050/
+
+Warning: This is a development server. Do not use app.run_server
+in production, use a production WSGI server like gunicorn instead.
+
+* Serving Flask app "main" (lazy loading)
+* Environment: production
+WARNING: This is a development server. Do not use it in a production deployment.
+Use a production WSGI server instead.
+* Debug mode: on
+```
+
+Le résultat s’observe dans la fenêtre d’un navigateur à l’adresse indiquée : `http://127.0.0.1:8050`.
+
+## 3 - Explorer la carte interactive
 
 Partie de Léo
 
-## 2 - Découvrir les histogrammes interactifs
+## 4 - Découvrir les histogrammes interactifs
 
 Le dashboard contient au total 3 histogrammes. Chaque histogramme a sa propre utilisation et fonctionnalités mais ces histogrammes ont quelques fonctionnalités communes.
 
