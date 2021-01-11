@@ -18,17 +18,18 @@ Trouvez toutes les données et sondages via ce lien :
 
 ### Introduction
 
-Actuellement, la place et la perception des personnes homosexuelles, transgenres, bisexuelles, etc., ne sont pas égalitaires partout dans le monde. Notamment dans l'Union Européenne, cette communauté a été soumise à de nombreuses discriminations, violences et persécutions. La communauté LGBTQ+ (Lesbian, Gay, Transgender, Queer, etc.) se combat dans le monde depuis le début du XXe siècle, pour aboutir à une égalité. Plusieurs mouvements et organisations ont vu le jour afin de faire place à la reconnaissance des droits des personnes LGBTQ+.
+Actuellement, la place et la perception des personnes homosexuelles, transgenres, bisexuelles, etc., ne sont pas égalitaires partout dans le monde. Notamment dans l'Union Européenne, cette communauté a été soumise à de nombreuses discriminations, violences et persécutions. La communauté LGBTQ+ (Lesbian, Gay, Bisexual, Transgender, Queer, etc.) se combat dans le monde depuis le début du XXe siècle, pour aboutir à une égalité. Plusieurs mouvements et organisations ont vu le jour afin de faire place à la reconnaissance des droits des personnes LGBTQ+.
 
-Afin de comprendre les réalités de la communauté LGBTQ+, un dashboard a été conçu pour mettre en avant la qualité de vie que peuvent avoir ces personnes en fonction des pays de l'Union Européenne. Ce dashboard comprend une carte de l'UE (Union Européenne) montrant le pourcentage des violences physiques ou sexuelles visant les personnes LGBTQ+ durant ces 5 dernières années ainsi que trois histogrammes du nombre plus ou moins exacts des violences durant ces 12 derniers mois des pays de l'UE. En parcourant ce dashboard, nous nous demanderons :
-**quels sont les pays et à quelle fréquence la communauté LGBTQ+ est le plus agressée physiquement ou verbalement ?**
+Afin de comprendre les réalités de la communauté LGBTQ+, un dashboard a été conçu pour mettre en avant la qualité de vie que peuvent avoir ces personnes en fonction des pays de l'Union Européenne. Ce dashboard comprend une carte de l'UE (Union Européenne) montrant le pourcentage des violences physiques ou sexuelles visant les personnes LGBTQ+; ainsi que trois histogrammes sur le nombre de ces violences durant ces 12 derniers mois des pays de l'UE. En parcourant ce dashboard, nous nous demanderons :
+**Quels sont les pays et à quelle fréquence la communauté LGBTQ+ est le plus agressée physiquement ou verbalement ?**
 
-Premièrement, nous analyserons les pays les plus touchées par des agressions grâce à la carte interactive, montrant l'ensemble de l'UE
-et des résultats du sondage des personnes LGBTQ+. Deuxièmement, nous verrons le nombre de fois où une personne LGBTQ+ a été menacé, ou agressé physiquement/sexuellement au cours de ces 12 derniers mois, dans l'UE.
+Premièrement, nous analyserons les pays les plus touchées par des agressions grâce à la carte interactive, montrant l'ensemble de l'UE et des résultats du sondage des personnes LGBTQ+. Deuxièmement, nous verrons le nombre de fois où une personne LGBTQ+ a été menacé, ou agressé physiquement/sexuellement au cours de ces 12 derniers mois, dans l'UE.
 
 ## 1 - Les pays de l'UE les plus touchés
 
-Partie de Léo
+En moyenne en Europe, 59% des personnes de communautés LGBT se sont fait agressé dans les 12 derniers mois pour des raisons d'appartenance à ces communautés. En effet, le chiffre le plus bas est 46% en Suède et cela monte jusqu'à 69% en Croatie. En France, se sont 58% des personnes qui pensent s'être fait agressé pour être perçu comme LGBT.
+ On remarque ainsi une légère augmentation de ces chiffres pour les pays se situant dans l'Europe de l'est-sud
+
 
 ## 2 - Fréquence d'agression visant une personne LGBTQ+
 
@@ -41,7 +42,7 @@ Enfin, nous avons un taux de 14% pour les agressions au Luxembourg de plus de di
 
 ### Conclusion
 
-Ce dashboard nous a permis de découvrir les pays les plus touchés par les agressions visant la communauté LGBTQ+ ainsi que le nombre de fois où ces personnes ont été agressé dans les pays de l'UE. En effet, les pays les plus touchés sont : , , , ; où on peut apercevoir un pourcentage de %, pour le pays , ou encore un pourcentage de % pour le pays, avec un taux de % d'au moins une agression pour ce même pays.
+Ce dashboard nous a permis de découvrir les pays les plus touchés par les agressions visant la communauté LGBTQ+ ainsi que le nombre de fois où ces personnes ont été agressé dans les pays de l'UE. En effet, les pays les plus touchés sont : Croatie, Bulgarie, Roumanie. En Bulgarie par exemple : 68 % des individus se sont fait attaqué pour s'être fait perçu comme LGBT et près de 11% d'entre eux se sont fait agressé plus de 10 fois. 
 
 En parcourant ces données et en les analysant, on peut alors se demander si ces données reflètent de la qualité de vie des personnes LGBTQ+ dans ces pays, ou au minima, si elles sont un facteur qui reflèterait de la qualité de vie de la communauté. De plus, il serait intéressant d'établir une corrélation entre la qualité de vie d'une personne LGBTQ+ et les droits qu'elles possèdent dans son pays.
 
@@ -107,7 +108,19 @@ Use a production WSGI server instead.
 
 Le résultat s’observe dans la fenêtre d’un navigateur à l’adresse indiquée : `http://127.0.0.1:8888`.
 
-## 3 - Découvrir les histogrammes interactifs
+## 3 - Explorer la carte interactive
+
+Afin de mieux représenter des réponses, nous avons ajouté au dashboard une carte intéractive.
+Celle-ci est accessible dans le menu déroulant principal en sélectionnant `"Carte de pourcentage de personnes agressés par pays"`.
+
+La carte affiche le pourcentage des populations des pays européens ayant répondu "oui" à la question suivante :
+`"Votre dernière agression physique ou sexuelle est-elle due au fait vous étiez perçu comme LGBT ?(durant les 12 derniers moins)"`
+
+Les pays les plus foncés sont ceux ayant répondu le plus souvent _"Oui"_. Il est également possible de survoler les pays afin d'avoir le nom du pays ainsi que son pourcentage exact.
+
+Cette carte est manipulable. Il est possible de zoomer et dézoomer avec la molette de la souris et l'on peut également déplacer le champs de vision du monde avec le clic gauche.
+
+## 4 - Découvrir les histogrammes interactifs
 
 Le dashboard contient au total 3 histogrammes. Chaque histogramme a sa propre utilisation et fonctionnalités mais ces histogrammes ont quelques fonctionnalités communes. Pour accéder aux histogrammes, il faut choisir dans le menu déroulant `"Nombre d'agressions"`ou `"Comparaison des réponses"`.
 
@@ -152,17 +165,6 @@ Pour pouvoir zoomer sur les catégories de réponses des pays, procéder ainsi :
 
 > Notes : Pour revenir sur le mode d'origine, cliquer sur _Autoscale_ du modebar (logo flèches croisées en diagonale).
 
-## 4 - Explorer la carte interactive
-
-Afin de mieux représenter des réponses, nous avons ajouter au dashboard une carte intéractive.
-Celle-ci est accessible dans le menu déroulant principal en sélectionnant `"Carte de pourcentage de personnes agressés par pays"`.
-
-La carte affiche le pourcentage des populations des pays européens ayant répondu "oui" à la question suivante :
-`"Avez vous été physiquement ou sexuellement attaqué ou menacé dans ces 5 dernières années ?(Pour des raisons LGBTQ+)"`
-
-Les pays les plus foncés sont ceux ayant répondu le plus souvent _"Oui"_. Il est également possible de survoler les pays afin d'avoir le nom du pays ainsi que son pourcentage exact.
-
-Cette carte est manipulable. Il est possible de zoomer et dézoomer avec la molette de la souris et l'on peut également déplacer le champs de vision du monde avec le clic gauche.
 
 ---
 

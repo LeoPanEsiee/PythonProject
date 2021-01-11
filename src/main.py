@@ -147,12 +147,12 @@ for feature in europe_countries['features']:
 
 # Récupérer les données du csv
 df = pd.read_csv(
-    "datas/did_get_attacked.csv",
+    "datas/attacked_because_lgbt.csv",
     delim_whitespace=True, header=13, encoding='latin1'
 )
 
 # Retirer les réponses négatives du csv
-df = df[df.answer != 'No']
+df = df[df.answer == 'Yes']
 
 # Retirer les pays du csv non trouvés dans les pays du geojson
 for currentCountry in df['CountryCode'].unique():
@@ -165,30 +165,30 @@ df['id'] = df['CountryCode'].apply(lambda x: country_id_map[x])
 #
 # Carte
 #
-
-
 def interactive_map():
     """
     Figure représentant la carte des réponses positives à la question :
-    "Avez vous été physiquement ou sexuellement attaqué ou menacé dans ces 5 dernières années ?
-    (Pour des raisons LGBTQ+)"
+    "Votre dernière agression physique ou sexuelle est-elle due au fait vous étiez perçu comme LGBT ?
+    (durant les 12 derniers moins)"
     """
-    fig = px.choropleth_mapbox(df,
-                               title="A été physiquement ou sexuellement attaqué ou menacé dans ces 5 dernières années",
-                               locations='id', geojson=europe_countries, color='percentage',
-                               color_continuous_scale=px.colors.sequential.Blues,
-                               hover_name='CountryCode',
-                               hover_data={'percentage': True, 'id': False},
-                               labels={
-                                   "percentage": "pourcentage de oui"
-                               },
-
-                               mapbox_style="carto-positron",
-                               center={'lat': 56.7, 'lon': 10},
-                               zoom=2.8,
-                               opacity=0.7,
-                               height=800
-                               )
+    fig = px.choropleth_mapbox(
+        df, locations='id', geojson=europe_countries, color='percentage',
+        title="A été physiquement ou sexuellement attaqué ou menacé dans ces 12 dernières mois pour des raisons d'appartenance aux groupes LGBT",
+        color_continuous_scale=px.colors.sequential.Blues,
+        hover_name='CountryCode',
+        hover_data={'percentage': True, 'id': False},
+        labels={
+            "percentage": "Pourcentage de oui"
+        },
+        mapbox_style="carto-positron",
+        center={'lat': 56.7, 'lon': 10},
+        zoom=2.8,
+        opacity=0.7,
+        height=800
+    )
+    fig.update_layout(
+        margin={"l":10}
+    )
     return fig
 
 
@@ -209,9 +209,9 @@ app.layout = html.Div(
         dcc.Dropdown(
             id="chosen-graph-dropdown", value=1,
             options=[
-                {'label': 'Nombre d\'agressions', 'value': 1},
-                {'label': 'Comparaison des réponses', 'value': 2},
-                {'label': 'Carte de pourcentage de personnes agressés par pays', 'value': 3}
+                {'label': 'Carte de pourcentage de personnes agressés par pays', 'value': 1},
+                {'label': 'Nombre d\'agressions', 'value': 2},
+                {'label': 'Comparaison des réponses', 'value': 3}
             ],
             style={
                 'textAlign': 'center', 'color': 'black',
@@ -258,11 +258,11 @@ def dropdown_choice(value):
     halfscreen = {'display': 'inline-block', 'width': '50%'}
     hidden = {'display': 'none'}
     if value == 1:
-        return countryCode_dropdown_style(), halfscreen, halfscreen, hidden, hidden
-    if value == 2:
-        return hidden, hidden, hidden, visible, hidden
-    if value == 3:
         return hidden, hidden, hidden, hidden, visible
+    if value == 2:
+        return countryCode_dropdown_style(), halfscreen, halfscreen, hidden, hidden
+    if value == 3:
+        return hidden, hidden, hidden, visible, hidden
     return visible, halfscreen, halfscreen, hidden, hidden
 
 
