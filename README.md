@@ -64,7 +64,6 @@ L'installation du projet se fait à l'aide des commandes suivantes :
 ```
 $ git clone https://github.com/LeoPanEsiee/PythonProject.git
 $ cd ../path/to/the/file
-
 ```
 
 ### Installation des packages nécessaires
@@ -77,7 +76,8 @@ plotly.express
 
 1. Installer dash : `pip install dash`
 2. Installer pandas : `pip install pandas`
-3. Installer plotly : `pip install plotly` sauf si déjà installé, dans ce cas utiliser cette commande : `pip install plotly --upgrade`
+3. Installer plotly : `pip install plotly` sauf si déjà installé, dans ce cas utiliser cette commande :
+   `pip install plotly --upgrade`
 
 ## 2 - Lancer le dashboard
 
@@ -152,19 +152,17 @@ Pour pouvoir zoomer sur les catégories de réponses des pays, procéder ainsi :
 
 > Notes : Pour revenir sur le mode d'origine, cliquer sur _Autoscale_ du modebar (logo flèches croisées en diagonale).
 
-
 ## 4 - Explorer la carte interactive
 
 Afin de mieux représenter des réponses, nous avons ajouter au dashboard une carte intéractive.
 Celle-ci est accessible dans le menu déroulant principal en sélectionnant `"Carte de pourcentage de personnes agressés par pays"`.
 
 La carte affiche le pourcentage des populations des pays européens ayant répondu "oui" à la question suivante :
-`"Avez vous été physiquement ou sexuellement attacké ou menacé dans ces 5 dernieres années ?(Pour res raison LGBTQ+)"`
+`"Avez vous été physiquement ou sexuellement attaqué ou menacé dans ces 5 dernières années ?(Pour des raisons LGBTQ+)"`
 
-Les pays les plus foncés sont ceux ayant répondu le plus souvent "oui". Il est également possible de survoler les pays afin d'avoir le nom du pays ainsi que son pourcentage exact.
+Les pays les plus foncés sont ceux ayant répondu le plus souvent _"Oui"_. Il est également possible de survoler les pays afin d'avoir le nom du pays ainsi que son pourcentage exact.
 
 Cette carte est manipulable. Il est possible de zoomer et dézoomer avec la molette de la souris et l'on peut également déplacer le champs de vision du monde avec le clic gauche.
-
 
 ---
 
@@ -176,16 +174,36 @@ Ce guide du développeur est conçu pour fournir de la documentation aux personn
 
 ## 1 - Programmer et améliorer la carte interactive
 
-La carte se base sur les technologies de choropleth_mapbox de plotly express.
+La carte se base sur les technologies de **choropleth_mapbox** de **plotly express**.
 
-Pour fonctionner, il faut associer les données que l'on récupère d'un geojson européen; avec les réponses des pays touchés dans le sondage récupéré sous forme de csv. 
+Pour fonctionner, il faut associer les données que l'on récupère d'un geojson européen; avec les réponses des pays touchés dans le sondage récupéré sous forme de csv.
 
-Il faut en outre prendre en compte les noms donnés à ces pays. Pour cette raison, si un pays du sondage n'est pas présent dans les données du geojson, son cas doit être géré. 
+Il faut en outre prendre en compte les noms donnés à ces pays. Pour cette raison, si un pays du sondage n'est pas présent dans les données du geojson, son cas doit être géré.
 
-Cela concerne en particulier des lignes qui pourraient apparaitrent dans certaines version de ce sondage (pas présent ici), en particulier pour les chiffres sur la Serbie (pas dans l'UE) et EU-28 qui englobe la moyenne des 28 pays de l'UE. Il y a également le cas particulier de la république Tchèque qui est nommée 'Czechia' dans le csv mais 'Czech Rep.' dans le geojson. 
+Cela concerne en particulier des lignes qui pourraient apparaitrent dans certaines versions de ce sondage (pas présent ici), en particulier pour les chiffres sur la Serbie (pas dans l'UE) et EU-28 qui englobent la moyenne des 28 pays de l'UE. Il y a également le cas particulier de la république Tchèque qui est nommée 'Czechia' dans le csv mais 'Czech Rep.' dans le geojson.
 
 Ainsi, par mesure de sécurité, de simplicité et de gestion d'exceptions, les pays invalides ne sont pas représentés sur la carte.
 
-La carte affiche ensuite les chiffres contenus dans le csv sur les locations des pays concernés. Ici, on affiche le pourcentage des populations ayant répondu "oui" de chaque pays.
+La carte affiche ensuite les chiffres contenus dans le csv sur les locations des pays concernés. Ici, on affiche le pourcentage des populations ayant répondu _"Oui"_ de chaque pays.
 
 ## 2 - Améliorer les histogrammes
+
+À partir de la **Partie Graphes**, pour modifier les histogrammes, il est possible de créer des sous ensembles de données en utilisant la méthode _query()_. La représentation des données peut alors être modifiée.
+
+#### Modifier le bargroup
+
+Pour modifier le bargroup (représentation du regroupement des barres), il y a trois possibilités :
+
+- `stack` : `barmode= "stack"` : les valeurs sont empilées les unes sur les autres,
+- `group`: `barmode= "group"`: montre l'histogramme sous forme de diagramme à barres groupées,
+- `overlay` : `barmode= "overlay"` : affiche les barres semi-transparentes les unes sur les autres.
+
+#### Augmenter ou diminuer le nombre de barres
+
+Utiliser le paramètre `nbins= *int*`
+
+#### Agréger les valeurs de manières différentes
+
+L'histogramme de Plotly permet d'agréger les valeurs à l'aide de 5 fonctions - comptage, somme, moyenne, minimum, maximum.
+
+- Utiliser le paramètre `histfunc= *"function"*`
