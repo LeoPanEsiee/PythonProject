@@ -190,6 +190,8 @@ La carte affiche ensuite les chiffres contenus dans le csv sur les locations des
 
 À partir de la **Partie Graphes**, pour modifier les histogrammes, il est possible de créer des sous ensembles de données en utilisant la méthode _query()_. La représentation des données peut alors être modifiée.
 
+La technologie utilisée est principalement plotly express. Initialement, les histogrammes présentent les catégories (axe x), en fonction des réponses (fréquence d'agression) et l'axe des y en fonction du pourcentage. Cependant, cette catégorisation peut être modifiée. Il suffit de mettre dans le paramètre `x`et/ou `y`, la colonne que l'on veut.
+
 #### Modifier le bargroup
 
 Pour modifier le bargroup (représentation du regroupement des barres), il y a trois possibilités :
@@ -200,10 +202,30 @@ Pour modifier le bargroup (représentation du regroupement des barres), il y a t
 
 #### Augmenter ou diminuer le nombre de barres
 
-Utiliser le paramètre `nbins= *int*`
+Utiliser le paramètre `nbins= 5`
 
 #### Agréger les valeurs de manières différentes
 
 L'histogramme de Plotly permet d'agréger les valeurs à l'aide de 5 fonctions - comptage, somme, moyenne, minimum, maximum.
 
-- Utiliser le paramètre `histfunc= *"function"*`
+- Utiliser le paramètre `histfunc= "sum"`
+  - `count`, `sum`, `avg`, `min`, `max`.
+
+#### Afficher les catégories séparément en ligne ou colonnes
+
+Pour afficher les catégories séparément les unes à côté des autres dans les colonnes ou les unes au-dessus des autres dans les lignes, il faut utiliser les paramètres `facet_col` et `facet_row` qui sont destinés à cet effet.
+
+Exemple :
+
+```
+px.histogram(dataf, x="answer",
+  color="CountryCode",
+  facet_col="CountryCode",
+  facet_col_wrap=3)
+```
+
+#### Orientation des paramètres
+
+L'histogramme peut être orienté horizontalement ou verticalement. Le paramètre d'orientation a deux valeurs `v` et `h` mais l'orientation est plutôt influencée par `x` et `y`. En inversant l'ordre de x et y, on fait pivoter l'histogramme horizontal verticalement.
+
+Exemple : `px.histogram(dataf, y="answer")`
