@@ -35,14 +35,16 @@ col_options = [
 ]
 
 
-#Création d'une instance de dash
+# Création d'une instance de dash
 app = dash.Dash(__name__)
 app.title = "Endangered Rainbow"
 
 #
 # Histogramme 1
 #
-@app.callback(Output('graph1', 'figure'),[Input('CountryCode-dropdown', 'value')])
+
+
+@app.callback(Output('graph1', 'figure'), [Input('CountryCode-dropdown', 'value')])
 def chosen_country(country):
     """
     Retourne la figure en fonction du pays choisi.
@@ -84,7 +86,7 @@ def compare_countries():
         labels={
             'answer': 'Fréquence',
             'percentage': 'Pourcentage',
-            'CountryCode':'Pays'
+            'CountryCode': 'Pays'
         },
         height=500,
         width=700,
@@ -105,6 +107,8 @@ def compare_countries():
 #
 # Histogramme 3
 #
+
+
 def compare_answers():
     """
     Figure représentant les réponses des pays de l'UE regroupé par réponse.
@@ -116,7 +120,7 @@ def compare_answers():
         labels={
             'answer': 'Fréquence',
             'percentage': 'Percentage',
-            'CountryCode':'Pays'
+            'CountryCode': 'Pays'
         },
         height=600,
         width=1500,
@@ -130,10 +134,10 @@ def compare_answers():
 #    Partie Map     #
 # # # # # # # # # # #
 
-#Récupérer les données du geojson
-europe_countries = json.load(open("datas/europe_countries.json","r"))
+# Récupérer les données du geojson
+europe_countries = json.load(open("datas/europe_countries.json", "r"))
 
-#Création d'un id pour chaque pays du geojson
+# Création d'un id pour chaque pays du geojson
 country_id_map = {}
 i = 0
 for feature in europe_countries['features']:
@@ -141,48 +145,50 @@ for feature in europe_countries['features']:
     country_id_map[feature['properties']['name']] = feature['id']
     i = i+1
 
-#Récupérer les données du csv
+# Récupérer les données du csv
 df = pd.read_csv(
-    "datas/did_get_attacked.csv", 
+    "datas/did_get_attacked.csv",
     delim_whitespace=True, header=13, encoding='latin1'
 )
 
-#Retirer les réponses négatives du csv
+# Retirer les réponses négatives du csv
 df = df[df.answer != 'No']
 
-#Retirer les pays du csv non trouvés dans les pays du geojson
+# Retirer les pays du csv non trouvés dans les pays du geojson
 for currentCountry in df['CountryCode'].unique():
     if currentCountry not in country_id_map.keys():
         df = df[df.CountryCode != currentCountry]
 
-#Associer les pays du csv aux ids des pays du geojson
-df['id'] = df['CountryCode'].apply(lambda x : country_id_map[x])
+# Associer les pays du csv aux ids des pays du geojson
+df['id'] = df['CountryCode'].apply(lambda x: country_id_map[x])
 
 #
 # Carte
 #
+
+
 def interactive_map():
     """
     Figure représentant la carte des réponses positives à la question :
-    "Avez vous été physiquement ou sexuellement attacké ou menacé dans ces 5 dernieres années ?
-    (Pour res raison LGBTQ+)"
+    "Avez vous été physiquement ou sexuellement attaqué ou menacé dans ces 5 dernières années ?
+    (Pour des raisons LGBTQ+)"
     """
     fig = px.choropleth_mapbox(df,
-        title = "A été physiquement ou sexuellement attacké ou menacé dans ces 5 dernieres années",
-        locations='id', geojson=europe_countries, color='percentage',
-        color_continuous_scale=px.colors.sequential.Blues,
-        hover_name='CountryCode',
-        hover_data={'percentage':True,'id':False},
-        labels={
-            "percentage": "pourcentage de oui"
-        },
-        
-        mapbox_style="carto-positron",
-        center={'lat' : 56.7, 'lon' : 10},
-        zoom = 2.8,
-        opacity=0.7,
-        height = 800
-    )
+                               title="A été physiquement ou sexuellement attaqué ou menacé dans ces 5 dernières années",
+                               locations='id', geojson=europe_countries, color='percentage',
+                               color_continuous_scale=px.colors.sequential.Blues,
+                               hover_name='CountryCode',
+                               hover_data={'percentage': True, 'id': False},
+                               labels={
+                                   "percentage": "pourcentage de oui"
+                               },
+
+                               mapbox_style="carto-positron",
+                               center={'lat': 56.7, 'lon': 10},
+                               zoom=2.8,
+                               opacity=0.7,
+                               height=800
+                               )
     return fig
 
 
@@ -190,37 +196,37 @@ def interactive_map():
 #    Partie App     #
 # # # # # # # # # # #
 
-#Création du HTML du dash
+# Création du HTML du dash
 app.layout = html.Div(
     children=[
         html.H1(
             "Fréquence d'agression envers la communauté LGBTQ+ dans l'UE",
             style={
-                'textAlign': 'center', 'color': 'black', 
-                'font-size': 23, 'font-family':'Courier New'
-            }                
+                'textAlign': 'center', 'color': 'black',
+                'font-size': 23, 'font-family': 'Courier New'
+            }
         ),
         dcc.Dropdown(
             id="chosen-graph-dropdown", value=1,
-            options= [
-                {'label':'Nombre d\'agressions', 'value':1},
-                {'label':'Comparaison des réponses', 'value':2},
-                {'label':'Carte de pourcentage de personnes agressés par pays', 'value':3}
+            options=[
+                {'label': 'Nombre d\'agressions', 'value': 1},
+                {'label': 'Comparaison des réponses', 'value': 2},
+                {'label': 'Carte de pourcentage de personnes agressés par pays', 'value': 3}
             ],
             style={
                 'textAlign': 'center', 'color': 'black',
-                'font-size': 18, 'font-family':'Courier New'
+                'font-size': 18, 'font-family': 'Courier New'
             }
         ),
         dcc.Dropdown(
             id="CountryCode-dropdown", value="France", options=col_options,
             style={
-                'display':'inline',
+                'display': 'inline',
                 'textAlign': 'center', 'color': 'black',
-                'font-size': 18, 'font-family':'Courier New'
+                'font-size': 18, 'font-family': 'Courier New'
             }
         ),
-        
+
         dcc.Graph(id="graph1", figure={}),
         dcc.Graph(id="graph2", figure=compare_countries()),
         dcc.Graph(id="graph3", figure=compare_answers()),
@@ -228,15 +234,17 @@ app.layout = html.Div(
     ]
 )
 
-#Callback sur tous les graphes existants
+# Callback sur tous les graphes existants
+
+
 @app.callback(
     [
-    Output('CountryCode-dropdown', 'style'),
-    Output('graph1', 'style'),
-    Output('graph2', 'style'),
-    Output('graph3', 'style'),
-    Output('graph4', 'style')
-    ], 
+        Output('CountryCode-dropdown', 'style'),
+        Output('graph1', 'style'),
+        Output('graph2', 'style'),
+        Output('graph3', 'style'),
+        Output('graph4', 'style')
+    ],
     [Input('chosen-graph-dropdown', 'value')]
 )
 def dropdown_choice(value):
@@ -246,25 +254,26 @@ def dropdown_choice(value):
         value : graphe choisi à partir du dropdown menu
         valeur par défaut : premier graph
     """
-    visible = {'display': 'inline-block','width':'100%'}
-    halfscreen = {'display': 'inline-block','width':'50%'}
+    visible = {'display': 'inline-block', 'width': '100%'}
+    halfscreen = {'display': 'inline-block', 'width': '50%'}
     hidden = {'display': 'none'}
     if value == 1:
         return countryCode_dropdown_style(), halfscreen, halfscreen, hidden, hidden
-    if value == 2 :
+    if value == 2:
         return hidden, hidden, hidden, visible, hidden
-    if value == 3 :
+    if value == 3:
         return hidden, hidden, hidden, hidden, visible
     return visible, halfscreen, halfscreen, hidden, hidden
 
+
 def countryCode_dropdown_style():
     return {
-                'textAlign': 'center', 'color': 'black', 
-                'margin-top' : '10px',
-                'width':'200px',
-                'font-size': 18, 'font-family':'Courier New'
-            }
+        'textAlign': 'center', 'color': 'black',
+        'margin-top': '10px',
+        'width': '200px',
+        'font-size': 18, 'font-family': 'Courier New'
+    }
 
 
-#Lancer l'application
+# Lancer l'application
 app.run_server(debug=True, port="8888")
