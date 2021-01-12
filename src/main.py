@@ -5,9 +5,9 @@
     Création de la carte et des histogrammes.
 """
 
-#
-# Imports
-#
+# # # # # # # #
+#   Imports   #
+# # # # # # # #
 import json
 import dash
 import pandas as pd
@@ -47,7 +47,7 @@ app.title = "Endangered Rainbow"
 @app.callback(Output('graph1', 'figure'), [Input('CountryCode-dropdown', 'value')])
 def chosen_country(country):
     """
-    Retourne la figure en fonction du pays choisi.
+    Return : la figure en fonction du pays choisi
     Args:
         country: Chaîne de caractères, pays dans l'UE.
         Obtenu à partir de la dropdown menu
@@ -77,7 +77,7 @@ def chosen_country(country):
 #
 def compare_countries():
     """
-    Figure représentant un histogramme animé comparant les réponses des pays de l'UE.
+    Return : la Figure représentant un histogramme animé comparant les réponses des pays de l'UE.
     """
     fig = px.bar(
         dataf, x="answer", y="percentage",
@@ -111,7 +111,7 @@ def compare_countries():
 
 def compare_answers():
     """
-    Figure représentant les réponses des pays de l'UE regroupé par réponse.
+    Return : la figure représentant les réponses des pays de l'UE regroupé par réponse.
     """
     fig = px.histogram(
         dataf, x="answer", y="percentage",
@@ -151,7 +151,7 @@ df = pd.read_csv(
     delim_whitespace=True, header=13, encoding='latin1'
 )
 
-# Retirer les réponses négatives du csv
+#Ne prendre que les réponses positives
 df = df[df.answer == 'Yes']
 
 # Retirer les pays du csv non trouvés dans les pays du geojson
@@ -167,13 +167,15 @@ df['id'] = df['CountryCode'].apply(lambda x: country_id_map[x])
 #
 def interactive_map():
     """
-    Figure représentant la carte des réponses positives à la question :
-    "Votre dernière agression physique ou sexuelle est-elle due au fait vous étiez perçu comme LGBT ?
+    Return : la figure représentant la carte des réponses positives à la question :
+    "Votre dernière agression physique ou sexuelle
+    est-elle due au fait vous étiez perçu comme LGBT ?
     (durant les 12 derniers moins)"
     """
     fig = px.choropleth_mapbox(
         df, locations='id', geojson=europe_countries, color='percentage',
-        title="A été physiquement ou sexuellement attaqué ou menacé dans ces 12 dernières mois pour des raisons d'appartenance aux groupes LGBT",
+        title="A été physiquement ou sexuellement attaqué ou menacé dans ces 12 dernières mois "
+        "pour des raisons d'appartenance aux groupes LGBT",
         color_continuous_scale=px.colors.sequential.Blues,
         hover_name='CountryCode',
         hover_data={'percentage': True, 'id': False},
@@ -234,8 +236,9 @@ app.layout = html.Div(
     ]
 )
 
-# Callback sur tous les graphes existants
-
+# # # # # # # # # # # #
+#  CSS Supplémentaire #
+# # # # # # # # # # # #
 
 @app.callback(
     [
@@ -250,9 +253,9 @@ app.layout = html.Div(
 def dropdown_choice(value):
     """
     Gère la visibilité des graphes à afficher
+    Return : les styles de chaque graphes
     Args:
-        value : graphe choisi à partir du dropdown menu
-        valeur par défaut : premier graph
+        value : du choix sélectionné dans le dropdown menu
     """
     visible = {'display': 'inline-block', 'width': '100%'}
     halfscreen = {'display': 'inline-block', 'width': '50%'}
@@ -260,13 +263,16 @@ def dropdown_choice(value):
     if value == 1:
         return hidden, hidden, hidden, hidden, visible
     if value == 2:
-        return countryCode_dropdown_style(), halfscreen, halfscreen, hidden, hidden
+        return countrycode_dropdown_style(), halfscreen, halfscreen, hidden, hidden
     if value == 3:
         return hidden, hidden, hidden, visible, hidden
     return visible, halfscreen, halfscreen, hidden, hidden
 
 
-def countryCode_dropdown_style():
+def countrycode_dropdown_style():
+    """
+    Return : le style du countryCode dropdown
+    """
     return {
         'textAlign': 'center', 'color': 'black',
         'margin-top': '10px',
@@ -276,4 +282,4 @@ def countryCode_dropdown_style():
 
 
 # Lancer l'application
-app.run_server(debug=True, port="8888")
+app.run_server(debug=False, port="8888")

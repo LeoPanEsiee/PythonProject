@@ -10,7 +10,7 @@ Trouvez toutes les données et sondages via ce lien :
 
 [Open Data : FRA EU LGBT](https://fra.europa.eu/en/publications-and-resources/data-and-maps/survey-fundamental-rights-lesbian-gay-bisexual-and)
 
-> Notes : Les deux sondages utilisés sont _"How many times did somebody physically/sexually attack or threaten you in the last 12 months ?"_ et _"Physically/sexually attacked or threatened with violence at home or elsewhere in the last 5 years for any reason"_ ; disponibles via le Topic _"Violence and harassment (47)"_.
+> Notes : Les deux sondages utilisés sont  _"How many times did somebody physically/sexually attack or threaten you in the last 12 months ?"_  et  _"LAST incident of physical / sexual attack or threat of violence in the past 12 months - Happened because perceived to be L, G, B or T?"_ ;  disponibles via le Topic _"Violence and harassment (47)"_.
 
 ---
 
@@ -20,7 +20,7 @@ Trouvez toutes les données et sondages via ce lien :
 
 Actuellement, la place et la perception des personnes homosexuelles, transgenres, bisexuelles, etc., ne sont pas égalitaires partout dans le monde. Notamment dans l'Union Européenne, cette communauté a été soumise à de nombreuses discriminations, violences et persécutions. La communauté LGBTQ+ (Lesbian, Gay, Bisexual, Transgender, Queer, etc.) se combat dans le monde depuis le début du XXe siècle, pour aboutir à une égalité. Plusieurs mouvements et organisations ont vu le jour afin de faire place à la reconnaissance des droits des personnes LGBTQ+.
 
-Afin de comprendre les réalités de la communauté LGBTQ+, un dashboard a été conçu pour mettre en avant la qualité de vie que peuvent avoir ces personnes en fonction des pays de l'Union Européenne. Ce dashboard comprend une carte de l'UE (Union Européenne) montrant le pourcentage des violences physiques ou sexuelles visant les personnes LGBTQ+; ainsi que trois histogrammes sur le nombre de ces violences durant ces 12 derniers mois des pays de l'UE. En parcourant ce dashboard, nous nous demanderons :
+Afin de comprendre les réalités de la communauté LGBTQ+, un dashboard a été conçu pour mettre en avant la qualité de vie que peuvent avoir ces personnes en fonction des pays de l'Union Européenne. Ce dashboard comprend une carte de l'UE (Union Européenne) montrant le pourcentage des violences physiques ou sexuelles visant les personnes LGBTQ+; ainsi que trois histogrammes sur le nombre de ces violences durant ces 12 derniers mois des pays de l'UE. En parcourant ce dashboard, nous nous demanderons :  
 **Quels sont les pays et à quelle fréquence la communauté LGBTQ+ est le plus agressée physiquement ou verbalement ?**
 
 Premièrement, nous analyserons les pays les plus touchées par des agressions grâce à la carte interactive, montrant l'ensemble de l'UE et des résultats du sondage des personnes LGBTQ+. Deuxièmement, nous verrons le nombre de fois où une personne LGBTQ+ a été menacé, ou agressé physiquement/sexuellement au cours de ces 12 derniers mois, dans l'UE.
@@ -28,16 +28,19 @@ Premièrement, nous analyserons les pays les plus touchées par des agressions g
 ## 1 - Les pays de l'UE les plus touchés
 
 En moyenne en Europe, 59% des personnes de communautés LGBT se sont fait agressé dans les 12 derniers mois pour des raisons d'appartenance à ces communautés. En effet, le chiffre le plus bas est 46% en Suède et cela monte jusqu'à 69% en Croatie. En France, se sont 58% des personnes qui pensent s'être fait agressé pour être perçu comme LGBT.
- On remarque ainsi une légère augmentation de ces chiffres pour les pays se situant dans l'Europe de l'est-sud
+On remarque ainsi une légère augmentation de ces chiffres pour les pays se situant dans l'Europe de l'est-sud
+![Image carte europe](images/carte_europe.png)
 
 
 ## 2 - Fréquence d'agression visant une personne LGBTQ+
 
-En France, selon le premier histogramme, il y a un peu plus d'une chance sur deux qu'une personne LGBTQ+ se fasse agressée physiquement ou verbalement contre 3 à 4 % pour une fréquence allant de 4 à plus de dix fois. Les taux d'harcèlement quotidien est donc très bas comparé à une agression éventuelle.
+En se basant des chiffres de la première carte, on peut en déduire que parmis les 58% touchés en France, 52% d'entre eux on été agressé exactement une fois et 14% au moins quatre fois. Cela représente un taux plutot faible par rapport à d'autres pays.
 ![Image histogramme france](images/nombre_agressions_france.png)
-En exploitant le deuxième et le dernier histogramme, on peut voir que les pays où le taux d'harcèlement est le plus élevé sont la Roumanie, la Lituanie et le Luxembourg. En effet, le pourcentage des fréquences s'équilibrent pour chacun des pays et les pourcentages des nombres d'agressions allant de 5 à plus de dix fois sont 2, voire 3 fois plus élevé que la plupart des pays. Au contraire, si nous prenons seulement la réponse 'Once', donc une seule agression en 12 mois, on peut se dire que les taux sont très faibles (35% pour la Roumanie et 33% pour la Lituanie), comparés à la moyenne qui est de 45%. Or, cela montre que les fréquences d'agressions sont hautes.
+En effet, en exploitant le deuxième et le troisième histogramme, on peut voir que les pays où le taux d'harcèlement est le plus élevé sont la Roumanie, la Lituanie et le Luxembourg. Le pourcentage des fréquences s'équilibrent pour chacun des pays et les pourcentages des nombres d'agressions allant de 5 à plus de dix fois sont 2, voire 3 fois plus élevé que la plupart des pays. Au contraire, si nous prenons seulement la réponse 'Once', donc une seule agression en 12 mois, on peut se dire que les taux sont très faibles (35% pour la Roumanie et 33% pour la Lituanie), comparés à la moyenne qui est de 45%. 
+
 ![Image equilibre](images/equilibre_lituania_romania.png)
-Enfin, nous avons un taux de 14% pour les agressions au Luxembourg de plus de dix fois (et 10%, 11% pour la Roumanie et la Lituanie), alors que la moyenne affiche un taux de 6% pour cette même catégorie (cf. _Average_). Ce qui prouve un taux d'harcèlement plus élevé pour ces trois pays. Sur l'image ci dessous, en rose, la moyenne de l'ensemble de l'UE concernant les agressions.
+
+Ainsi, par exemple au Luxembourg, parmis les 55% victimes d'agressions, il y un 44% qui sont agressé une fois mais 42% agressé plus de quatre fois.
 ![Image comparaison avec moyenne](images/desequilibre.png)
 
 ### Conclusion
@@ -60,25 +63,22 @@ Plusieurs installations sont nécessaires afin de procéder à l'affichage du da
 
 ### Installation du projet
 
-L'installation du projet se fait à l'aide des commandes suivantes :
+L'installation du projet se fait à l'aide de la commande suivante :
 
 ```
 $ git clone https://github.com/LeoPanEsiee/PythonProject.git
-$ cd ../path/to/the/file
 ```
 
 ### Installation des packages nécessaires
 
 ```
-dash
-pandas
-plotly.express
+pip install json
+pip install dash
+pip install pandas
+pip install plotly
+pip install dash_core_components
+pip install dash_html_components
 ```
-
-1. Installer dash : `pip install dash`
-2. Installer pandas : `pip install pandas`
-3. Installer plotly : `pip install plotly` sauf si déjà installé, dans ce cas utiliser cette commande :
-   `pip install plotly --upgrade`
 
 ## 2 - Lancer le dashboard
 
