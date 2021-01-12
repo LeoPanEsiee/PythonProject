@@ -170,7 +170,7 @@ def interactive_map():
     Return : la figure représentant la carte des réponses positives à la question :
     "Votre dernière agression physique ou sexuelle
     est-elle due au fait vous étiez perçu comme LGBT ?
-    (durant les 12 derniers moins)"
+    (durant les 12 derniers mois)"
     """
     fig = px.choropleth_mapbox(
         df, locations='id', geojson=europe_countries, color='percentage',

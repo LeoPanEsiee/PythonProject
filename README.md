@@ -10,7 +10,7 @@ Trouvez toutes les données et sondages via ce lien :
 
 [Open Data : FRA EU LGBT](https://fra.europa.eu/en/publications-and-resources/data-and-maps/survey-fundamental-rights-lesbian-gay-bisexual-and)
 
-> Notes : Les deux sondages utilisés sont  _"How many times did somebody physically/sexually attack or threaten you in the last 12 months ?"_  et  _"LAST incident of physical / sexual attack or threat of violence in the past 12 months - Happened because perceived to be L, G, B or T?"_ ;  disponibles via le Topic _"Violence and harassment (47)"_.
+> Notes : Les deux sondages utilisés sont _"How many times did somebody physically/sexually attack or threaten you in the last 12 months ?"_ et _"LAST incident of physical / sexual attack or threat of violence in the past 12 months - Happened because perceived to be L, G, B or T?"_ ; disponibles via le Topic _"Violence and harassment (47)"_.
 
 ---
 
@@ -23,11 +23,12 @@ Actuellement, la place et la perception des personnes homosexuelles, transgenres
 Afin de comprendre les réalités de la communauté LGBTQ+, un dashboard a été conçu pour mettre en avant la qualité de vie que peuvent avoir ces personnes en fonction des pays de l'Union Européenne. Ce dashboard comprend une carte de l'UE (Union Européenne) montrant le pourcentage des violences physiques ou sexuelles visant les personnes LGBTQ+; ainsi que trois histogrammes sur le nombre de ces violences durant ces 12 derniers mois des pays de l'UE. En parcourant ce dashboard, nous nous demanderons :  
 **Quels sont les pays et à quelle fréquence la communauté LGBTQ+ est le plus agressée physiquement ou verbalement ?**
 
-Premièrement, nous analyserons les pays les plus touchées par des agressions grâce à la carte interactive, montrant l'ensemble de l'UE et des résultats du sondage des personnes LGBTQ+. Deuxièmement, nous verrons le nombre de fois où une personne LGBTQ+ a été menacé, ou agressé physiquement/sexuellement au cours de ces 12 derniers mois, dans l'UE.
+Nous analyserons d'abord les pays les plus touchées par des agressions grâce à la carte interactive, montrant l'ensemble de l'UE et des résultats du sondage des personnes LGBTQ+; Puis, nous verrons le nombre de fois où une personne LGBTQ+ a été menacé, ou agressé physiquement/sexuellement au cours de ces 12 derniers mois, dans l'UE.
 
 ## 1 - Les pays de l'UE les plus touchés
 
 En moyenne en Europe, 59% des personnes de communautés LGBT se sont fait agressé dans les 12 derniers mois pour des raisons d'appartenance à ces communautés. En effet, le chiffre le plus bas est 46% en Suède et cela monte jusqu'à 69% en Croatie. En France, se sont 58% des personnes qui pensent s'être fait agressé pour être perçu comme LGBT.
+
 On remarque ainsi une légère augmentation de ces chiffres pour les pays se situant dans l'Europe de l'est-sud
 ![Image carte europe](images/carte_europe.png)
 
@@ -96,14 +97,12 @@ Cette application est lancée dans une console :
 $ python main.py
 Dash is running on http://127.0.0.1:8888/
 
-Warning: This is a development server. Do not use app.run_server
-in production, use a production WSGI server like gunicorn instead.
-
 * Serving Flask app "main" (lazy loading)
 * Environment: production
-WARNING: This is a development server. Do not use it in a production deployment.
-Use a production WSGI server instead.
-* Debug mode: on
+  WARNING: This is a development server. Do not use it in a production deployment.
+  Use a production WSGI server instead.
+* Debug mode: off
+* Running on http://127.0.0.1:8888/ (Press CTRL+C to quit)
 ```
 
 Le résultat s’observe dans la fenêtre d’un navigateur à l’adresse indiquée : `http://127.0.0.1:8888`.
@@ -114,7 +113,7 @@ Afin de mieux représenter des réponses, nous avons ajouté au dashboard une ca
 Celle-ci est accessible dans le menu déroulant principal en sélectionnant `"Carte de pourcentage de personnes agressés par pays"`.
 
 La carte affiche le pourcentage des populations des pays européens ayant répondu "oui" à la question suivante :
-`"Votre dernière agression physique ou sexuelle est-elle due au fait vous étiez perçu comme LGBT ?(durant les 12 derniers moins)"`
+`"Votre dernière agression physique ou sexuelle est-elle due au fait vous étiez perçu comme LGBT ?(durant les 12 derniers mois)"`
 
 Les pays les plus foncés sont ceux ayant répondu le plus souvent _"Oui"_. Il est également possible de survoler les pays afin d'avoir le nom du pays ainsi que son pourcentage exact.
 
@@ -187,6 +186,19 @@ Cela concerne en particulier des lignes qui pourraient apparaitrent dans certain
 Ainsi, par mesure de sécurité, de simplicité et de gestion d'exceptions, les pays invalides ne sont pas représentés sur la carte.
 
 La carte affiche ensuite les chiffres contenus dans le csv sur les locations des pays concernés. Ici, on affiche le pourcentage des populations ayant répondu _"Oui"_ de chaque pays.
+
+#### Modifier la map
+
+- `mapbox_style="carto-positron"` : changer le fond de la carte. D'autres fonds sont disponibles sur le site de plotly
+
+- `hover_data={'percentage': True, 'id': False}` : en hover sur les pays, on affiche le pourcentage et on enlève l'id du pays qui n'est pas pertinent pour nos chiffres
+
+- `center={'lat': 56.7, 'lon': 10}` : Pour positionner l'emplacement de la carte dans le monde
+
+- `opacity=0.7` : opacité des informations couvrant la carte
+
+
+
 
 ## 2 - Améliorer les histogrammes
 
