@@ -64,21 +64,24 @@ Plusieurs installations sont nécessaires afin de procéder à l'affichage du da
 
 ### Installation du projet
 
-L'installation du projet se fait à l'aide de la commande suivante :
+Une fois invité dans le projet, l'installation se fait à l'aide de la commande suivante :
 
 ```
-$ git clone https://github.com/LeoPanEsiee/PythonProject.git
+git clone https://github.com/LeoPanEsiee/PythonProject.git
 ```
 
 ### Installation des packages nécessaires
 
+Si vous n'avez pas pip (package manager pour python) :
 ```
-pip install json
-pip install dash
-pip install pandas
-pip install plotly
-pip install dash_core_components
-pip install dash_html_components
+apt install python3-pip
+```
+
+Voici la liste des packages à installer :
+
+```
+pip3 install dash
+pip3 install pandas
 ```
 
 ## 2 - Lancer le dashboard
@@ -110,7 +113,7 @@ Le résultat s’observe dans la fenêtre d’un navigateur à l’adresse indiq
 ## 3 - Explorer la carte interactive
 
 Afin de mieux représenter des réponses, nous avons ajouté au dashboard une carte intéractive.
-Celle-ci est accessible dans le menu déroulant principal en sélectionnant `"Carte de pourcentage de personnes agressés par pays"`.
+Celle-ci est accessible dans le menu déroulant principal en sélectionnant `"Carte de pourcentage de personnes agressées par pays"`.
 
 La carte affiche le pourcentage des populations des pays européens ayant répondu "oui" à la question suivante :
 `"Votre dernière agression physique ou sexuelle est-elle due au fait vous étiez perçu comme LGBT ?(durant les 12 derniers mois)"`
@@ -121,7 +124,7 @@ Cette carte est manipulable. Il est possible de zoomer et dézoomer avec la mole
 
 ## 4 - Découvrir les histogrammes interactifs
 
-Le dashboard contient au total 3 histogrammes. Chaque histogramme a sa propre utilisation et fonctionnalités mais ces histogrammes ont quelques fonctionnalités communes. Pour accéder aux histogrammes, il faut choisir dans le menu déroulant `"Nombre d'agressions"`ou `"Comparaison des réponses"`.
+Le dashboard contient au total 3 histogrammes. Chaque histogramme a sa propre utilisation et fonctionnalités mais ces histogrammes ont quelques fonctionnalités communes. Pour accéder aux histogrammes, il faut choisir dans le menu déroulant `"Fréquence d'agressions par pays"`ou `"Comparaison des réponses de fréquence d\'agressions"`.
 
 #### Histogramme 1
 
@@ -164,6 +167,9 @@ Pour pouvoir zoomer sur les catégories de réponses des pays, procéder ainsi :
 
 > Notes : Pour revenir sur le mode d'origine, cliquer sur _Autoscale_ du modebar (logo flèches croisées en diagonale).
 
+##### Fonctionnalités Plotly
+
+L'application offre également toutes les fonctionnalités des menus de plotly. Il est donc possible de prendre des captures des zones séléctionnés, de sélectionner avec un mode rectangle ou lasso et de remmetre le graphe par défaut.
 
 ---
 

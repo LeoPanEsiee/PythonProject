@@ -119,14 +119,26 @@ def compare_answers():
         color='CountryCode',
         labels={
             'answer': 'Fréquence',
-            'percentage': 'Percentage',
+            'percentage': 'Pourcentage',
             'CountryCode': 'Pays'
         },
         height=600,
-        width=1500,
+        width=1400,
         hover_name="CountryCode",
-        barmode="group"
+        barmode="group",
+        category_orders={"CountryCode":
+                         ["Lithuania", "Romania", "Slovenia",
+                          "Hungary", "Sweden", "Poland",
+                          "Portugal", "Croatia", "Bulgaria",
+                          "Germany", "Italy", "Luxembourg",
+                          "Slovakia", "Austria",
+                          "Average", "Czechia", "Finland",
+                          "Spain", "Latvia", "Estonia",
+                          "Netherlands", "Belgium", "Denmark",
+                          "Greece", "United Kingdom", "Cyprus",
+                          "Malta", "France", "Ireland"]}
     )
+    fig.update_layout(yaxis_title="Pourcentage")
     return fig
 
 
@@ -174,14 +186,12 @@ def interactive_map():
     """
     fig = px.choropleth_mapbox(
         df, locations='id', geojson=europe_countries, color='percentage',
-        title="A été physiquement ou sexuellement attaqué ou menacé dans ces 12 dernières mois "
+        title="A été physiquement ou sexuellement attaqué ou menacé dans ces 12 dernières mois " +
         "pour des raisons d'appartenance aux groupes LGBT",
         color_continuous_scale=px.colors.sequential.Blues,
         hover_name='CountryCode',
         hover_data={'percentage': True, 'id': False},
-        labels={
-            "percentage": "Pourcentage de oui"
-        },
+        labels={"percentage": "pourcentage de personnes agressées"},    
         mapbox_style="carto-positron",
         center={'lat': 56.7, 'lon': 10},
         zoom=2.8,
@@ -211,13 +221,14 @@ app.layout = html.Div(
         dcc.Dropdown(
             id="chosen-graph-dropdown", value=1,
             options=[
-                {'label': 'Carte de pourcentage de personnes agressés par pays', 'value': 1},
-                {'label': 'Nombre d\'agressions', 'value': 2},
-                {'label': 'Comparaison des réponses', 'value': 3}
+                {'label': '1. Carte interactive du taux d\'agression des personnes LGBT par pays', 'value': 1},
+                {'label': '2. Fréquence d\'agressions par pays', 'value': 2},
+                {'label': '3. Comparaison des réponses de fréquence d\'agressions', 'value': 3}
             ],
             style={
                 'textAlign': 'center', 'color': 'black',
-                'font-size': 18, 'font-family': 'Courier New'
+                'font-size': 18, 'font-family': 'Courier New',
+                'max-width': '800px', 'margin':'auto'
             }
         ),
         dcc.Dropdown(
@@ -282,4 +293,4 @@ def countrycode_dropdown_style():
 
 
 # Lancer l'application
-app.run_server(debug=False, port="8888")
+app.run_server(debug=True, port="8888")
